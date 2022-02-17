@@ -173,14 +173,15 @@ function esPositivo(numero) {
   //Si el número es positivo, devolver ---> "Es positivo"
   //Si el número es negativo, devolver ---> "Es negativo"
   //Si el número es 0, devuelve false
-  if (numero = o) {
+  if(numero === 0) {
     return false
-  } else if (numero > 0) {
-    return "es positivo"
-  } else {
-    return "es negativo"
   }
-  
+  else if(numero > 0) {
+    return "Es positivo"
+  }
+  else {
+    return "Es negativo"
+  }
 }
 
 function agregarSimboloExclamacion(str) {
@@ -194,7 +195,7 @@ function combinarNombres(nombre, apellido) {
   // Devuelve "nombre" y "apellido" combinados en una string y separados por un espacio.
   // Ejemplo: "Soy", "Henry" -> "Soy Henry"
   // Tu código
-  var combinado = nombre + "" + apellido
+  var combinado = nombre + " " + apellido
   return combinado
   
 }
@@ -203,7 +204,7 @@ function obtenerSaludo(nombre) {
   // Toma la string "nombre" y concatena otras string en la cadena para que tome la siguiente forma:
   // "Martin" -> "Hola Martin!"
   // Tu código:
-  return "hola " + nombre + " !"
+  return "Hola " + nombre + "!"
   
 }
 
@@ -245,12 +246,12 @@ function esVocal(letra){
   // Si no es vocal, tambien debe devolver "Dato incorrecto".
   //Escribe tu código aquí
   if (letra.length > 1) {
-    return "dato incorrecto"
+    return "Dato incorrecto"
   }
-  if (letra === a || letra === e || letra === i || letra === o || letra === u) {
-    return "es vocal"
+  if (letra === "a" || letra === "e" || letra === "i" || letra === "o" || letra === "u") {
+    return "Es vocal"
   }
-  return "dato incorrecto"
+  return "Dato incorrecto"
 }
 
 // No modificar nada debajo de esta línea
