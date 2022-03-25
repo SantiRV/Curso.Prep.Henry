@@ -1,0 +1,14 @@
+#titulo-cv {
+    text-align: center;
+}
+h3 {
+    text-decoration: underline;
+    font-weight: bold;
+}
+p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+#foto-cv {
+    width: 300px;
+    height: 250px;
+}
