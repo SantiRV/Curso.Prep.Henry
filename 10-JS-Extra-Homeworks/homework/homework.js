@@ -5,11 +5,17 @@ function deObjetoAmatriz(objeto){
   // un par clave-valor en forma de matriz.
   //Ejemplo: 
   /*objeto({
-      D: 1,
-      B: 2,
-      C: 3
-    }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
+    D: 1,
+    B: 2,
+    C: 3
+  }) ---> [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
+  var nuevoArray = []
+  for(clave in objeto) {
+    nuevoArray.push([clave, objeto[clave]])
+  }
+  return nuevoArray
+  /* tambien: return Object.entries(objeto) */
 }
 
 
@@ -18,6 +24,16 @@ function numberOfCharacters(string) {
   //en formato par clave-valor.
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
+  var caracteres = {};
+  for(var i = 0; i < string.length; i++) {
+    if(caracteres.hasOwnProperty(string[i])) {
+      caracteres[string[i]] += 1
+    }
+    else {
+      caracteres[string[i]] = 1
+    }
+  }
+  return caracteres;
 }
 
 
@@ -26,6 +42,18 @@ function capToFront(s) {
   //al principio de la palabra.
   //Ejemplo: soyHENRY -> HENRYsoy
   //Escribe tu código aquí
+  var mayus = "";
+  var minus = "";
+  for(var i = 0; i < s.length; i++) {
+    //si la s(letra o palabra) es igual a s(letra o palabra)maayuscula 
+    if(s[i] === s[i].toUpperCase()) {
+      mayus += s[i];
+    }
+    else {
+      minus += s[i]
+    }
+  }
+  return mayus + minus
 }
 
 
@@ -35,6 +63,14 @@ function asAmirror(str) {
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
   //Escribe tu código aquí
+  //lo convierto en un array para poder invertirlo
+  //lo que hace el .split es crear un array, en conjunto con el
+  //espacio hace que los arrays esten separados por un espacio
+  var cambios = str.split(" ").map(function(el) {
+    // [T,h,e] --> [e,h,T], el join siirve para volverlo a verlo como texto
+    return el.split("").reverse().join("")
+  })
+  return cambios.join(" ")
 } 
 
 
@@ -43,6 +79,13 @@ function capicua(numero){
   //La misma debe retornar: "Es capicua" si el número se número que se lee igual de 
   //izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
   //Escribe tu código aquí
+  var string = numero.toString();
+  var reverse = string.split("").reverse()
+  if(numero == reverse.join("")) {
+    return "Es capicua"
+  } else {
+    return "No es capicua"
+  }
 }
 
 
@@ -50,6 +93,10 @@ function deleteAbc(cadena){
   //Define una función que elimine las letras "a", "b" y "c" de la cadena dada 
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
+  //el espacio despues de la a, b, c es para que me lo remplace por un string vacio
+  // al .replace se le tiene que agregar lo que queremos reemplazar junto con su remplazo
+  var nuevaCadena = cadena.replace("a", "").replace("b", "").replace("c", "")
+  return nuevaCadena;
 }
 
 
@@ -57,6 +104,13 @@ function sortArray(arr) {
   //La función recibe una matriz de strings. Ordena la matriz en orden creciente de longitudes de cadena
   //Ej: Recibe ---> ["You", "are", "beautiful", "looking"] || Devuelve ---> [“You", "are", "looking", "beautiful"]
   //Escribe tu código aquí
+  // lo que hace .sort es "ordenar"
+  // recibe dos parametros a y b 
+  var ordenados = arr.sort(function(a,b) {
+    return a.length - b.length
+  });
+  return ordenados;
+
 }
 
 
@@ -65,7 +119,18 @@ function buscoInterseccion(arreglo1, arreglo2){
   //retornar un nuevo array con la intersección de ambos elementos. (Ej: [4,2,3] unión [1,3,4] = [3,4].
   //Si no tienen elementos en común, retornar un arreglo vacío.
   //Aclaración: los arreglos no necesariamente tienen la misma longitud
-  //Escribe tu código aquí  
+  //Escribe tu código aquí 
+  var nuevoArray = [];
+  for (let j = 0; j < arreglo1.length; j++) {
+    for (let i = 0; i < arreglo2.length; i++) {
+      if (arreglo1[j] === arreglo2[i]) {
+        nuevoArray.push(arreglo1[j]);
+      }
+      
+    }
+    
+  } 
+  return nuevoArray
 }
 
 

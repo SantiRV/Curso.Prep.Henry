@@ -105,6 +105,7 @@ function esEntero(numero) {
   // De lo contrario, devuelve "false"
   // Pista: Puedes resolver esto usando `Math.floor`
   // Tu código:
+  /* return Matth.floor(numero) === numero */ 
   return numero % 1 === 0
 }
 
@@ -113,6 +114,9 @@ function fizzBuzz(numero) {
   // Si "numero" es divisible entre 5, devuelve "buzz"
   // Si "numero" es divisible entre 3 y 5 (ambos), devuelve "fizzbuzz"
   // De lo contrario, devuelve el numero
+  /* siempre debe tenerse en cuenta el orden por eso 
+  si es divisible por 3 y 5 va primero, porque sino no seguiria corriendo y 
+  quedaria solo en 3 o en 5 */
   if(numero % 15 === 0) return "fizzbuzz"
   if(numero % 3 === 0) return "fizz"
   if(numero % 5 === 0) return "buzz"
@@ -162,7 +166,7 @@ function esPrimo(numero) {
 function esVerdadero(valor){
   //Escribe una función que reciba un valor booleano y retorne “Soy verdadero” 
   //si su valor es true y “Soy falso” si su valor es false.
-  //Escribe tu código aquí
+  //Escribe tu código aquí  
   if(valor === true) {
     return "Soy verdadero"
   }
